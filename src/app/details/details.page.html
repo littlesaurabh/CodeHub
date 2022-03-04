@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button style="color:white;"></ion-menu-button> -->
+      <!-- <h6><ion-icon name="chevron-back-outline" [routerLink]='["/contents"]' [queryParams]="{type:language}"></ion-icon></h6> -->
+      <h6>
+        <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
+      </h6>
+    </ion-buttons>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{contents.chapter}}
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding-horizontal
+  [scrollEvents]="true"
+  (ionScrollStart)="logScrollStart()"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()"
+  [fullscreen]="true"
+>
+
+  <div *ngFor="let c of item.content" style="margin:0px 12px;">
+    
+    <h1 *ngIf="c.type=='heading'">
+      {{c.value}}
+    </h1>
+    <p *ngIf="c.type=='text'" style="text-align:justify">
+      {{c.value}}
+    </p>
+    <ion-img *ngIf="c.type=='image'" [src]="imageUrl"></ion-img>
+
+    <div *ngIf="c.type=='list-string'">
+      <ul *ngFor="let item of c.value">
+        <li>{{item}}</li>
+      </ul>
+    </div>
+    <div *ngIf="c.type=='code'">
+      <pre style="background-color: black; color: white;">{{code}}</pre>
+    </div>
+  </div>
+  <!-- </div>  -->
+ 
+  <ion-item lines="none" style="font-weight: bold; margin:2% 32%; " >
+    <ion-icon name="chevron-back-outline" (click)="backItem()" *ngIf="backDisplay"></ion-icon> Page
+    {{index+1}}<ion-icon *ngIf="nextDisplay"
+      name="chevron-forward-outline"
+      (click)="nextItem()">
+    </ion-icon>
+  </ion-item>
+
+
+  <!-- <ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf="contents.index!=1"  >
+    <ion-fab-button (click)="back(contents.index)" color="light" size="small">
+      <ion-icon name="arrow-undo"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed"  *ngIf="contents.index!='6'">
+    <ion-fab-button (click)="next(contents.index)" color="light" size="small">
+      <ion-icon name="arrow-redo"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+  <!-- 
+    <ion-item lines="none">
+ 
+      <ion-button *ngIf="contents.index!=1" color="primary" fill="clear" (click)="back(contents.index)" ><ion-icon name="arrow-undo" slot="icon-only"color="primary"></ion-icon></ion-button>
+      <ion-button *ngIf="contents.index!='6'" color="primary" fill="clear" (click)="next(contents.index)"slot="end" ><ion-icon name="arrow-redo" slot="icon-only" color="primary"></ion-icon></ion-button>
+    </ion-item> -->
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home">
+          <ion-icon name="home"></ion-icon>
+          <!-- <ion-label>tab 1</ion-label> -->
+        </ion-tab-button>
+
+        <ion-tab-button tab="categories">
+          <ion-icon name="book"></ion-icon>
+          <!-- <ion-label>tab 2</ion-label> -->
+        </ion-tab-button>
+
+        <ion-tab-button tab="notifications">
+          <ion-icon name="notifications-sharp"></ion-icon>
+          <!-- <ion-label>tab 3</ion-label> -->
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

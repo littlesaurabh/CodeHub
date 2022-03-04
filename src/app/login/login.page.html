@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+
+      <h6>
+        <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
+      </h6>
+    </ion-buttons> -->
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+  
+
+    <!-- <ion-card-header>
+      Card Header
+    </ion-card-header> -->
+    <br/>
+    <ion-grid>
+      <ion-row justify-content-around>
+        <ion-col>
+    
+        </ion-col>
+        <ion-col>
+          <ion-icon  color="primary" name="person-circle-sharp" style="zoom:5.0;" ></ion-icon>
+    
+        </ion-col>
+        <ion-col>
+          
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-card-content style="text-align: center;" >
+      <form  [formGroup]="userLogin" (ngSubmit)="loginData()" >
+        <ion-item color="none" >
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+      
+
+      <ion-item color="none">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password" required></ion-input>
+      </ion-item>
+
+      <br/>
+      <ion-button type="submit" color="primary" expand="block"  shape="round" [disabled]="!userLogin.valid">Log IN<ion-icon name="log-in"></ion-icon></ion-button>
+      <br/><br/>
+       Not registered? <a [routerLink]='["/register"]' >Register Now</a><br/><br/>
+      Password not remember? <a [routerLink]='["/login"]' (click)="recoverPassword()">Recover Password</a>
+      </form>
+      
+      <!-- <div class="row">
+        <div class="col">______________</div>
+        <div class="col-auto">OR</div>
+        <div class="col"><hr></div>
+    </div> -->
+
+    <!-- <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>or<ion-col><hr></ion-col>
+      </ion-row>
+    </ion-grid>
+
+  
+      <ion-button  color="danger"  expand="full">Log In with &nbsp; <ion-icon name="logo-google"></ion-icon> </ion-button>
+       <ion-button  color="primary" expand="full">Log In with &nbsp; <ion-icon name="logo-facebook"></ion-icon> </ion-button> -->
+    </ion-card-content> 
+
+  
+</ion-content>

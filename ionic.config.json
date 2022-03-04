@@ -1,0 +1,7 @@
+{
+  "name": "codeHub",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

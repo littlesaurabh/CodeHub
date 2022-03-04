@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color:white;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{category}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+
+  <ion-card *ngFor="let cource of getValue" (click)="loadContent(cource)">
+    <ion-item lines="none">
+      <ion-thumbnail slot="start">
+        <img src={{cource.img}}>
+      </ion-thumbnail>
+      <ion-card-header>
+
+        <ion-card-title>
+          <h5>{{cource.language}}</h5>
+        </ion-card-title>
+      </ion-card-header>
+    </ion-item>
+  </ion-card>
+
+
+  <!-- <ion-card  *ngFor="let cource of getValue" class="small-list">
+    
+ 
+  <ion-item >
+    <ion-thumbnail slot="start">
+      <img src={{cource.img}} >
+    </ion-thumbnail>
+    <ion-label>{{cource.language}}</ion-label>
+  </ion-item>
+
+
+</ion-card>  -->
+
+
+  <!-- <ion-grid>
+  <ion-row>
+    <ion-col col-6 *ngFor="let cource of getValue">
+    <ion-card>
+
+  <img src={{cource.img}} height="100px" width="100px"/>
+  
+   
+  {{cource.language}}
+
+  
+
+</ion-card>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>
+ -->
+
+
+
+
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar >
+    <ion-tabs > 
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home">
+          <ion-icon name="home"></ion-icon>
+          <!-- <ion-label>tab 1</ion-label> -->
+        </ion-tab-button>
+
+        <ion-tab-button tab="categories">
+          <ion-icon name="book"></ion-icon>
+          <!-- <ion-label>tab 2</ion-label> -->
+        </ion-tab-button>
+
+        <ion-tab-button tab="notifications">
+          <ion-icon name="notifications-sharp"></ion-icon>
+          <!-- <ion-label>tab 3</ion-label> -->
+        </ion-tab-button>
+
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

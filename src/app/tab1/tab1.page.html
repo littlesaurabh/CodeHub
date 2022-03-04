@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color:white;"></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-title>Tips & Quiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- 404 Error -->
+
+<div *ngIf="errorMsg">
+  <h3 style="font-family:Wide Latin;text-align: center;font-weight: bold;font-size: x-large;"> {{errorMsg}}</h3>
+<img  src="../../assets/images/404.png"/>
+</div>
+
+<!-- for tips of the day -->
+  <ion-card >
+    <ion-item color="primary">
+      <ion-icon name="bulb-sharp" slot="start"></ion-icon>
+    
+      <ion-label>{{tipsTitle}}</ion-label>
+    
+    </ion-item>
+    
+    <ion-card-content style="color:black">
+       {{tips}}
+    </ion-card-content>
+  </ion-card>
+
+<!-- for Quiz of the day -->
+
+<ion-card >
+  <ion-item color="primary">
+    <ion-icon name="code-slash-sharp" slot="start"></ion-icon>
+  
+    <ion-label>{{quizTitle}}</ion-label>
+  
+  </ion-item>
+  
+  <ion-card-content style="color:black">
+      <!-- <p>{{quiz}}</p> -->
+<pre >  cc = 2
+  if False:
+      cc = 66
+
+  def helmet():
+      if True:
+          cc = 40
+
+  helmet()
+
+  print(cc)</pre>
+  
+  <hr style="border-top: 1px solid rgb(148, 145, 145)">
+    
+        
+      <ion-list lines="none">
+        <ion-radio-group [(ngModel)]="ans">
+          <ion-item *ngFor="let option of options" > 
+            <ion-label >{{option}}</ion-label>
+            <ion-radio slot="start" [color]="radioColor" [value]="option" (click)="setColor()"></ion-radio>
+          </ion-item>
+          </ion-radio-group>
+      </ion-list> 
+      <ion-button color="primary" (click)="checkAns()">Submit Answer</ion-button>
+      
+      
+<!-- Currect answer message -->
+      <ion-item color="success" *ngIf="correctAns" >
+        <ion-icon name="checkmark-circle-sharp" slot="start"></ion-icon>
+      
+        <ion-label>{{correctAns}}</ion-label>
+      
+      </ion-item>
+
+   <!--Wronge answer Message  -->
+      <ion-item color="danger" *ngIf="wrongeAns">
+        <ion-icon name="close-circle-sharp" slot="start"></ion-icon>
+      
+        <ion-label>{{wrongeAns}}</ion-label>
+      
+      </ion-item> 
+
+<!-- warning Message-->
+      <ion-item color="warning" *ngIf="warning">
+        <ion-icon name="warning-sharp" slot="start"></ion-icon>
+      
+        <ion-label>{{warning}}</ion-label>
+      
+      </ion-item>
+      <ion-button *ngIf="viewExplainationBtn" fill="outline" color="primary" (click)="explainationShow()">Explaination</ion-button>
+
+
+     
+    
+
+      <ion-card *ngIf="viewExplaination" style="margin:5px -2px;">
+        <ion-item color="primary">
+          <ion-icon name="information-circle-sharp" slot="start"></ion-icon>
+          <ion-label>Explaination</ion-label>
+        
+        </ion-item>
+        
+        <ion-card-content style="color:black">
+          {{explaination}}
+        </ion-card-content>
+      </ion-card>
+  
+
+  </ion-card-content>
+</ion-card> 
+
+
+</ion-content>

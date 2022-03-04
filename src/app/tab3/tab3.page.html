@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color:white;"></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-title>Notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="errorMsg">
+    <h3 style="font-family:Wide Latin;text-align: center;font-weight: bold;font-size: x-large;"> {{errorMsg}}</h3>
+  <img  src="../../assets/images/404.png"/>
+  </div>
+  
+    <ion-card *ngFor="let notification of notifications">
+      <ion-item color="primary">
+        <ion-icon name="notifications-sharp" slot="start"></ion-icon>
+      
+        <ion-label>{{notification.title}}</ion-label>
+      
+      </ion-item>
+      <!-- <ion-card-header  color="primary" (click)="toggleAccordion()" style=" height:15px;border: 1px solid black;">
+          <h6 style="margin-top:-15px;border: 1px solid black;">{{notification.heading}}</h6>
+      </ion-card-header> -->
+      <ion-card-content style="color:black">
+           {{notification.message}}
+      </ion-card-content>
+    </ion-card>
+   
+
+</ion-content>

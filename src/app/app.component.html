@@ -1,0 +1,57 @@
+<ion-app >
+  <ion-split-pane contentId="main-content" >
+    <ion-menu contentId="main-content" type="overlay" >
+      <div class="logo-section">
+        <div class="logo-section__wrapper" >
+          <!-- <img class="logo-section__logo" src="assets/imgs/logo.png" />
+          <h3 class="logo-section__title">SideMenu</h3> -->
+          <ion-label style="font-family: Cooper;padding-left:0.3em;font-size: xx-large; color: white;"><b>CodeHub</b>
+          </ion-label> <br />
+          <ion-note style="font-family: Brush Script MT; color: white;">A programming app</ion-note>
+          <ion-item color="primary">
+        
+          <ion-avatar slot="start" >
+            <img src="https://www.pngitem.com/pimgs/m/80-800194_transparent-users-icon-png-flat-user-icon-png.png" />
+           
+          </ion-avatar>
+          <ion-label>{{fds.email}}</ion-label>
+        </ion-item>
+
+        </div>
+      </div>
+      <ion-content>
+        <ion-list id="inbox-list" lines="none">
+
+          <!-- <ion-list-header style="font-family: Cooper;" >CodeHub</ion-list-header >
+          <ion-note style="font-family: Brush Script MT;">A programming app</ion-note> -->
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item (click)="selectedIndex = i"  [routerLink]="[p.url]" lines="none"
+              detail="false" [class.selected]="selectedIndex == i">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" >
+          <ion-item lines="none" (click)="signout()"  routerDirection="root" class="signout">
+            <ion-icon slot="start" name="power" color="danger"></ion-icon>
+            <ion-label>Log out</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        </ion-list>
+
+        <!-- <ion-list id="labels-list">
+          <ion-list-header>Labels</ion-list-header>
+
+          <ion-item *ngFor="let label of labels" lines="none">
+            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+            <ion-label>{{ label }}</ion-label>
+          </ion-item>
+          
+        </ion-list> -->
+      </ion-content>
+
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

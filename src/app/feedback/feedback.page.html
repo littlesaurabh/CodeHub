@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      
+      <h6><ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon></h6>
+    </ion-buttons>
+    <ion-title>Feedback</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br/><br/>
+  <h1 style="font-family:Wide Latin;text-align: center;font-weight: bold;font-size: x-large;">Write your feedback</h1>
+
+
+  <br/>
+<!-- Textarea in an item with a placeholder -->
+<ion-input placeholder="Feedback related to" style="margin:10px 30px;border:1px solid rgb(20,66,100);width:84%;border-radius: 20px;" [(ngModel)]="subject"></ion-input>
+
+
+<ion-item lines="none" style="border:1px solid rgb(20,66,100);height:205px;margin: 30px;border-radius: 20px;">
+  <ion-textarea placeholder="write your feedback/suggestion here..." rows="7" style="line-height:1.6 ;" [(ngModel)]="body"></ion-textarea>
+</ion-item>
+
+
+
+<a [href]="url"><ion-button [disabled]="!(subject && body)"expand="block" style="margin:38px;" (click)="submitfeedback()">Submit feedback</ion-button></a>
+
+
+
+</ion-content>

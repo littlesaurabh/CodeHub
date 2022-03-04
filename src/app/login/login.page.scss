@@ -1,0 +1,14 @@
+error-message{
+    color:var(--ion-color-danger);
+}
+
+
+
+ion-content.background{
+    --background: url(../../assets/images/login.png) 0 0/100% 100% no-repeat;
+    text-align: center;
+}
+
+ion-card-content{
+margin-top: -35px;
+}

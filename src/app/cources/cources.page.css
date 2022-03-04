@@ -1,0 +1,42 @@
+/* // page-list {
+//     // reduce min height restriction
+//        .item {
+//            min-height: 0.5rem;
+//            max-height: 8rem;
+//        }
+//        // set height of thumbnail
+//        .item-md ion-thumbnail ion-img,
+//        .item-md ion-thumbnail img,
+//        .item ion-thumbnail ion-img,
+//        .item ion-thumbnail img {
+//            width: 50px;
+//            height: 50px;
+//        }
+//        // set max height of list item
+//        .small-list {
+//            max-height: 50px;
+//        }
+//     } */
+
+/* .small-list{
+    width:500px;
+} */
+
+ion-card {
+    /* border: 2px solid rgb(42, 129, 170); */
+    /* border: 1px solid rgb(251, 158, 43);
+    border-bottom: 7px solid rgb(248, 173, 80); */
+    border: 1px solid rgb(19, 70, 109);
+    border-left: 3px solid  rgb(19, 70, 109);
+    border-bottom: 6px solid  rgb(19, 70, 109);
+    
+    height: 100px;
+    /* background-color:rgb(42, 129, 170) ; */
+ }
+
+ /* ion-item {
+    background-color:rgb(134, 192, 192);
+ } */
+
+ 
+

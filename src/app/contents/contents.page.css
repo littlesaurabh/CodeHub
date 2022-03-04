@@ -1,0 +1,24 @@
+ion-card{
+    
+    /* border: 1px solid rgb(251, 158, 43);
+    border-left: 7px solid rgb(248, 173, 80);
+     */
+     border: 1px solid  rgb(19, 70, 109);
+    border-left: 7px solid rgb(19, 70, 109);
+    cursor: pointer;
+    
+}
+
+ion-icon{
+    color:rgb(48, 83, 110);
+}
+
+
+ion-icon{
+    color:white;
+   
+}
+ion-icon:hover{
+    
+    color: rgb(219, 155, 155);
+}
